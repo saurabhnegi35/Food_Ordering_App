@@ -1,0 +1,14 @@
+/* #container {
+  background-color: aqua;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.nav-items > ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
