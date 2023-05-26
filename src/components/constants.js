@@ -1,52 +1,4 @@
-// Manipulate the HTML DOM using Javscript
-// const heading = document.createElement("h1");
-// heading.innerHTML = "Namaste Everyone";
-// const root = document.getElementById("root");
-// root.appendChild(heading);
-
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Title = () => (
-  <a href="#">
-    <h1 id="title" key="h2">
-      Food Villa
-    </h1>
-  </a>
-);
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact US</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-//Config Driven UI
-// const config = [
-//   {
-//     type: "carousel",
-//     cards: [
-//       {
-//         offerName: "50% off",
-//       },
-//       {
-//         offerName: "No Delivery Charge",
-//       },
-//     ],
-//   },
-// ];
-
-const restaurantList = [
+export const restaurantList = [
   {
     type: "restaurant",
     data: {
@@ -778,53 +730,5 @@ const restaurantList = [
   },
 ];
 
-//Optional Chaining
-const RestaurantCard = ({
-  name,
-  cuisines,
-  cloudinaryImageId,
-  lastMileTravelString,
-}) => {
-  // const { name, cuisines, cloudinaryImageId, lastMileTravelString } =
-  // restaurant.data;
-  // console.log(props.restaurant?.data?.cloudinaryImageId);
-  return (
-    <div className="card">
-      <img
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/${cloudinaryImageId}`}
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h4>{lastMileTravelString}</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.data} />;
-      })}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <h4>Footer</h4>;
-};
-
-const AppLayout = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-
-// create root using createRoot
-const root = ReactDOM.createRoot(document.getElementById("root"));
-// passing react element inside root
-root.render(<AppLayout />);
+export const IMG_CDN_URL =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
