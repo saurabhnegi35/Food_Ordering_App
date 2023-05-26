@@ -3,7 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import { restaurantList } from "./constants";
 
 const Body = () => {
-  
+  let [searchText, setSearchText] = useState("KFC");
+
   return (
     <>
       <div className="restaurant-list">
@@ -12,8 +13,12 @@ const Body = () => {
           className="search-input"
           placeholder="Search"
           value={searchText}
-          
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            console.log(searchText);
+          }}
         />
+
         <button className="search-btn">Search</button>
       </div>
       <div className="restaurant-list">
