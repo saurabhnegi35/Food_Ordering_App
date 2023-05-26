@@ -1,7 +1,7 @@
 {
-  "name": "namaste_react",
+  "name": "food_ordering_app",
   "version": "1.0.0",
-  "description": "This is the namaste react course practice",
+  "description": "This is the food_ordering_app frontend",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
