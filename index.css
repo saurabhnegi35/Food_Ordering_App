@@ -144,3 +144,27 @@
     background-position: 1000px 0;
   }
 }
+
+/* Error Page */
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.errisfound {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40;
+}
+
+.err-btn {
+  margin-top: 5px;
+  width: 12em;
+  height: 3em;
+  background-color: #d7d4d4;
+  color: black;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+}
