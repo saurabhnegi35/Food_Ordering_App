@@ -1,12 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react"; /* This is named export */
-import Shimmer from "./Shimmer"; 
+import Shimmer from "./Shimmer";
 import { restaurantList } from "./constants";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filterData;
 }
@@ -21,6 +21,7 @@ const Body = () => {
 
   // use useEffect for one time call getRestaurants using empty dependency array
   useEffect(() => {
+    //API Call
     getRestaurants();
   }, []);
 
@@ -29,7 +30,7 @@ const Body = () => {
     // handle the error using try... catch
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6041&lng=77.225&page_type=DESKTOP_WEB_LISTING"
+        "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.341&lng=77.225&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
       // updated state variable restaurants with Swiggy API data
@@ -47,15 +48,16 @@ const Body = () => {
       setFilteredRestaurants(data);
       setErrorMessage("");
       if (data.length === 0) {
-        setErrorMessage("No matches restaurant found");
+        setErrorMessage("No Restaurant Matched the Search Term");
       }
     } else {
       setErrorMessage("");
       setFilteredRestaurants(restaurants);
     }
   };
-
+  console.log("filteredRestaurants", filteredRestaurants);
   // if allRestaurants is empty don't render restaurants cards
+  //Early Return
   if (!allRestaurants) return null;
 
   return (

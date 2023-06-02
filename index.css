@@ -18,24 +18,69 @@
   padding: 10px;
 }
 
+/* Restaurant cards CSS */
+.restaurant-list {
+  width: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .card {
-  width: 207.2px;
-  border: 1px solid black;
+  flex-basis: 250px;
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: #d3d5df;
+  cursor: pointer;
+  box-shadow: -1px 5px 10px 5px rgba(42, 42, 42, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card > img {
-  width: 100%;
-  height: 200px;
+  width: 230px;
+  height: 144px;
+  border-radius: 10px;
 }
 
-.restaurant-list {
+.card > h5 {
+  font-weight: lighter;
+}
+
+.card > span {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 10vw 0 11vw;
+  justify-content: space-between;
+  margin-top: 8px;
+  text-align: center;
 }
 
+.card > span > h4 {
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 0 2px 0;
+  margin-top: 10px;
+}
+
+.card > span > h4:first-child {
+  display: flex;
+  align-items: center;
+  background-color: var(--light-green);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.card > span > h4:first-child .fa-star {
+  font-size: 10px;
+  padding: 0 5px 3px 0;
+}
 /*Shimmer CSS */
 .shimmer-container {
   display: flex;
