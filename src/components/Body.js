@@ -30,7 +30,7 @@ const Body = () => {
     // handle the error using try... catch
     try {
       const data = await fetch(
-        "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.341&lng=77.225&page_type=DESKTOP_WEB_LISTING"
+        "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.3441&lng=77.08125&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
       // updated state variable restaurants with Swiggy API data
